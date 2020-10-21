@@ -1,0 +1,11 @@
+<div>
+  <button (click)="todosPromise.load()">Load todos</button>
+  <button (click)="todosPromise.reset()">Reset</button>
+
+  <br /><br />
+  <div *ngIf="todosPromise.isPending">loading...</div>
+  <div *ngIf="todosPromise.isEmpty">no results :(</div>
+  <div *ngFor="let todo of todosPromise.value">
+    <div>{{ todo.title }}</div>
+  </div>
+</div>
